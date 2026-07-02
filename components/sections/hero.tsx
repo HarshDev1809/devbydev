@@ -38,39 +38,42 @@ const contactLinks = [
 ];
 
 export function Hero() {
+  // Filter for social icons
+  const socialLinks = contactLinks.filter((link) =>
+    ["LinkedIn", "GitHub", "npm"].includes(link.label)
+  );
+
   return (
     <section
       id="hero"
-      className="relative overflow-hidden rounded-3xl bg-white border border-stone-200 mx-auto max-w-5xl mt-8 px-8 py-16 md:px-16 md:py-24"
+      className="relative mx-auto max-w-5xl px-6 py-24 md:py-32 flex flex-col justify-between min-h-[70vh]"
     >
-      {/* Subtle accent decorative element */}
-      <div className="absolute top-0 left-0 w-full h-1 bg-accent" />
-
-      <div className="relative">
-        <p className="text-sm font-semibold uppercase tracking-widest text-accent mb-4">
+      <div className="max-w-3xl">
+        <h1 className="text-6xl md:text-8xl font-bold text-stone-900 leading-tight mb-8">
+          Hi,<br />
+          I'm <span className="text-accent">{profile.name}</span><br />
           {profile.title}
-        </p>
-
-        <h1 className="font-heading text-5xl md:text-7xl font-bold text-stone-900 mb-6">
-          {profile.name}
         </h1>
 
-        <p className="max-w-2xl text-lg md:text-xl text-stone-600 leading-relaxed mb-10">
-          {profile.pitch}
-        </p>
+        <a
+          href={`mailto:${profile.email}`}
+          className="inline-block bg-accent hover:bg-accent/90 text-white font-semibold py-4 px-10 text-lg transition-colors"
+        >
+          Contact
+        </a>
+      </div>
 
-        {/* Contact row */}
-        <div className="flex flex-wrap items-center gap-1">
-          {contactLinks.map((link) => (
-            <TooltipIconLink
-              key={link.label}
-              href={link.href}
-              label={link.label}
-              icon={link.icon}
-              external={link.external !== false}
-            />
-          ))}
-        </div>
+      {/* Social Icons row positioned at the bottom left */}
+      <div className="flex flex-wrap items-center gap-4 mt-20">
+        {socialLinks.map((link) => (
+          <TooltipIconLink
+            key={link.label}
+            href={link.href}
+            label={link.label}
+            icon={link.icon}
+            external={link.external !== false}
+          />
+        ))}
       </div>
     </section>
   );
