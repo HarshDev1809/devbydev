@@ -32,6 +32,7 @@ export const profile = {
       "Microservices",
     ],
     "Currently Exploring": ["Vue.js", "Nuxt.js", "Golang"],
+    "Agentic AI": ["Claude Code", "Codex", "Cursor", "Gemini", "Google Jules"],
   },
   education: [
     {
