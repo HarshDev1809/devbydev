@@ -46,7 +46,7 @@ export function Hero() {
       <div className="max-w-3xl">
         <h1 className="text-6xl md:text-8xl font-bold text-stone-900 leading-tight mb-8">
           Hi,<br />
-          I'm <span className="text-accent">{profile.name}</span><br />
+          I&apos;m <span className="text-accent">{profile.name}</span><br />
           {profile.title}
         </h1>
 
