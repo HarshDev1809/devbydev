@@ -14,7 +14,7 @@ export function CurrentExperience() {
         subtitle="Where I'm currently working"
       />
 
-      <div className="space-y-6">
+      <div className="mt-12">
         {currentExperiences.map((exp) => (
           <ExperienceCard
             key={exp.company + exp.period}
@@ -24,13 +24,13 @@ export function CurrentExperience() {
         ))}
       </div>
 
-      <div className="mt-8">
+      <div className="mt-10 flex justify-center">
         <Link
           href="/experience"
-          className="inline-flex items-center gap-2 rounded-lg bg-accent/5 px-5 py-2.5 text-sm font-semibold text-accent hover:bg-accent/10"
+          className="group inline-flex items-center gap-2 bg-accent px-6 py-3 text-sm font-medium text-white hover:opacity-90 transition-opacity"
         >
           View full work history
-          <ArrowRight className="w-4 h-4" />
+          <ArrowRight className="w-4 h-4 text-white group-hover:translate-x-1 transition-transform" />
         </Link>
       </div>
     </section>
