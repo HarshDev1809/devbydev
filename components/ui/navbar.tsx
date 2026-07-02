@@ -16,19 +16,18 @@ export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-stone-200 bg-white/90 backdrop-blur-sm">
-      <nav className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
+    <header className="z-50 bg-background pt-6">
+      <nav className="mx-auto flex max-w-5xl items-center justify-between px-6">
         {/* Logo */}
         <Link
           href="/"
-          className="font-heading text-xl font-bold text-stone-900 hover:text-accent"
+          className="font-heading text-lg font-bold text-stone-900 hover:text-accent"
         >
-          HD
-          <span className="text-accent">.</span>
+          Harsh Dev
         </Link>
 
         {/* Desktop links */}
-        <ul className="hidden md:flex items-center gap-1">
+        <ul className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => {
             const isActive =
               link.href === "/"
@@ -38,10 +37,10 @@ export function Navbar() {
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className={`rounded-lg px-4 py-2 text-sm font-medium ${
+                  className={`text-sm font-bold pb-1 border-b-2 transition-colors ${
                     isActive
-                      ? "bg-accent/10 text-accent"
-                      : "text-stone-600 hover:text-accent hover:bg-accent/5"
+                      ? "border-accent text-stone-900"
+                      : "border-transparent text-stone-600 hover:text-stone-900"
                   }`}
                 >
                   {link.label}
@@ -63,8 +62,8 @@ export function Navbar() {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="md:hidden border-t border-stone-200 bg-white px-6 py-4">
-          <ul className="space-y-1">
+        <div className="md:hidden bg-background px-6 py-4">
+          <ul className="space-y-4">
             {navLinks.map((link) => {
               const isActive =
                 link.href === "/"
@@ -75,10 +74,10 @@ export function Navbar() {
                   <Link
                     href={link.href}
                     onClick={() => setMobileOpen(false)}
-                    className={`block rounded-lg px-4 py-2.5 text-sm font-medium ${
+                    className={`inline-block text-sm font-bold pb-1 border-b-2 ${
                       isActive
-                        ? "bg-accent/10 text-accent"
-                        : "text-stone-600 hover:text-accent hover:bg-accent/5"
+                        ? "border-accent text-stone-900"
+                        : "border-transparent text-stone-600 hover:text-stone-900"
                     }`}
                   >
                     {link.label}
