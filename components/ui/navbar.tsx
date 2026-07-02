@@ -2,8 +2,8 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X } from "lucide-react";
-import { useState } from "react";
+// import { Menu, X } from "lucide-react";
+// import { useState } from "react";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -13,7 +13,7 @@ const navLinks = [
 
 export function Navbar() {
   const pathname = usePathname();
-  const [mobileOpen, setMobileOpen] = useState(false);
+  // const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
     <header className="z-50 bg-background pt-6">
@@ -26,8 +26,8 @@ export function Navbar() {
           Harsh Dev
         </Link> */}
 
-        {/* Desktop links */}
-        <ul className="hidden md:flex items-center gap-8">
+        {/* Desktop & Mobile links */}
+        <ul className="flex items-center gap-6 md:gap-8">
           {navLinks.map((link) => {
             const isActive =
               link.href === "/"
@@ -50,17 +50,17 @@ export function Navbar() {
         </ul>
 
         {/* Mobile toggle */}
-        <button
+        {/* <button
           className="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg text-stone-600 hover:bg-stone-100"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label={mobileOpen ? "Close menu" : "Open menu"}
         >
           {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-        </button>
+        </button> */}
       </nav>
 
       {/* Mobile menu */}
-      {mobileOpen && (
+      {/* {mobileOpen && (
         <div className="md:hidden bg-background px-6 py-4">
           <ul className="space-y-4">
             {navLinks.map((link) => {
@@ -85,7 +85,7 @@ export function Navbar() {
             })}
           </ul>
         </div>
-      )}
+      )} */}
     </header>
   );
 }

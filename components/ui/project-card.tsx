@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { Tag } from "@/components/ui/tag";
 import { ArrowRight, ExternalLink } from "lucide-react";
 import type { Project } from "@/lib/data/projects";
 
@@ -9,36 +8,51 @@ interface ProjectCardProps {
 
 export function ProjectCard({ project }: ProjectCardProps) {
   return (
-    <div className="group flex flex-col rounded-2xl border border-stone-200 bg-white p-6 hover:shadow-lg hover:border-accent/30">
-      <div className="flex items-start justify-between gap-4 mb-3">
-        <h3 className="font-heading text-xl font-bold text-stone-900">
-          {project.title}
+    <article className="group flex flex-col py-10 md:py-12 border-t border-[#D8D6D0] first:border-t-0">
+      <div className="flex flex-col md:flex-row md:items-baseline md:justify-between mb-4 gap-2">
+        <h3 className="font-heading text-2xl md:text-3xl font-bold text-stone-900 group-hover:text-accent transition-colors">
+          <Link href={`/projects/${project.slug}`}>{project.title}</Link>
         </h3>
-        {project.context && (
-          <span className="shrink-0 rounded-lg bg-accent/10 px-2.5 py-0.5 text-xs font-semibold text-accent">
-            {project.context}
+        {project.timeframe && (
+          <span className="font-sans text-[15px] text-stone-500 shrink-0">
+            {project.timeframe}
           </span>
         )}
       </div>
 
-      <p className="text-stone-600 mb-4 leading-relaxed">{project.summary}</p>
+      {project.context && (
+        <div className="mb-5 font-sans text-xs font-semibold uppercase tracking-[0.15em] text-accent">
+          {project.context}
+        </div>
+      )}
 
-      <div className="flex flex-wrap gap-1.5 mb-6">
-        {project.stack.slice(0, 6).map((tech) => (
-          <Tag key={tech} label={tech} />
+      <p className="font-sans text-stone-700 mb-8 leading-[1.8] text-pretty max-w-3xl text-[17px]">
+        {project.summary}
+      </p>
+
+      {/* Tech Stack - Text based list instead of pill tags */}
+      <div className="font-sans text-[15px] text-stone-500 mb-8 leading-[1.8]">
+        {project.stack.map((tech, i) => (
+          <span key={tech}>
+            <span className="hover:text-accent transition-colors">{tech}</span>
+            {i < project.stack.length - 1 && (
+              <span className="mx-[6px] text-stone-300" aria-hidden="true">
+                &middot;
+              </span>
+            )}
+          </span>
         ))}
-        {project.stack.length > 6 && (
-          <Tag label={`+${project.stack.length - 6}`} />
-        )}
       </div>
 
-      <div className="mt-auto flex items-center gap-4">
+      <div className="mt-auto flex flex-wrap items-center gap-6 md:gap-8">
         <Link
           href={`/projects/${project.slug}`}
-          className="inline-flex items-center gap-1.5 text-sm font-semibold text-accent hover:underline"
+          className="group/link inline-flex items-center gap-2 font-sans text-[15px] font-medium text-stone-900 hover:text-accent transition-colors"
         >
-          View details
-          <ArrowRight className="w-3.5 h-3.5" />
+          <span className="border-b border-transparent group-hover/link:border-accent pb-0.5 transition-colors">
+            View details
+          </span>
+          <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
         </Link>
 
         {project.links?.map((link) => (
@@ -47,13 +61,15 @@ export function ProjectCard({ project }: ProjectCardProps) {
             href={link.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1 text-sm text-stone-500 hover:text-accent"
+            className="group/external inline-flex items-center gap-1.5 font-sans text-[15px] text-stone-500 hover:text-accent transition-colors"
           >
-            {link.label}
-            <ExternalLink className="w-3 h-3" />
+            <span className="border-b border-transparent group-hover/external:border-accent pb-0.5 transition-colors">
+              {link.label}
+            </span>
+            <ExternalLink className="w-3.5 h-3.5" />
           </a>
         ))}
       </div>
-    </div>
+    </article>
   );
 }

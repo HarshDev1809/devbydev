@@ -21,9 +21,9 @@ export const experiences: Experience[] = [
     location: "New Delhi",
     current: true,
     highlights: [
-      "Built backend automation system (Node.js, Express, cron) for daily backups, email triggers, freight calculations — moved ops cadence from 2–3x/week to daily.",
-      "Collaborated with leadership on architecture: DB schema design, adopted BullMQ for job queuing, migrated routing service Python → Node.js, owned full dev lifecycle.",
-      "Built IndexedDB caching layer for ~22,000-vessel GeoJSON dataset (~10MB) — eliminated redundant fetches, ~50% faster client load.",
+      "Built <span class=\"text-accent font-medium\">backend automation system</span> (<span class=\"text-accent font-medium\">Node.js</span>, <span class=\"text-accent font-medium\">Express</span>, <span class=\"text-accent font-medium\">cron</span>) for daily backups, email triggers, freight calculations — moved ops cadence from 2–3x/week to daily.",
+      "Collaborated with leadership on architecture: <span class=\"text-accent font-medium\">DB schema design</span>, adopted <span class=\"text-accent font-medium\">BullMQ</span> for job queuing, migrated routing service <span class=\"text-accent font-medium\">Python → Node.js</span>, owned full dev lifecycle.",
+      "Built <span class=\"text-accent font-medium\">IndexedDB caching layer</span> for ~22,000-vessel <span class=\"text-accent font-medium\">GeoJSON</span> dataset (~10MB) — eliminated redundant fetches, <span class=\"text-accent font-medium\">~50% faster client load</span>.",
     ],
     subProjects: [
       {

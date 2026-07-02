@@ -41,16 +41,10 @@ export default function ExperiencePage() {
       />
 
       {/* Timeline */}
-      <div className="relative">
-        {/* Timeline accent line */}
-        <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-accent/20 rounded-full hidden md:block" />
-
-        <div className="space-y-8 md:pl-8">
+      <div className="mt-12">
+        <div className="space-y-0">
           {experiences.map((exp) => (
             <div key={exp.company + exp.period} className="relative">
-              {/* Timeline dot */}
-              <div className="absolute -left-8 top-8 w-3 h-3 rounded-full bg-accent border-2 border-white shadow-sm hidden md:block" />
-
               <ExperienceCard experience={exp} />
             </div>
           ))}
