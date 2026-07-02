@@ -38,11 +38,6 @@ const contactLinks = [
 ];
 
 export function Hero() {
-  // Filter for social icons
-  const socialLinks = contactLinks.filter((link) =>
-    ["LinkedIn", "GitHub", "npm"].includes(link.label)
-  );
-
   return (
     <section
       id="hero"
@@ -61,19 +56,6 @@ export function Hero() {
         >
           Contact
         </a>
-      </div>
-
-      {/* Social Icons row positioned at the bottom left */}
-      <div className="flex flex-wrap items-center gap-4 mt-20">
-        {socialLinks.map((link) => (
-          <TooltipIconLink
-            key={link.label}
-            href={link.href}
-            label={link.label}
-            icon={link.icon}
-            external={link.external !== false}
-          />
-        ))}
       </div>
     </section>
   );
