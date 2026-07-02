@@ -23,7 +23,7 @@ export function PersonJsonLd() {
     ],
     alumniOf: {
       "@type": "CollegeOrUniversity",
-      name: profile.education.institution,
+      name: profile.education[0].institution,
     },
     knowsAbout: [
       "Node.js",
