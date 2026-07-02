@@ -1,5 +1,4 @@
 import { SectionHeading } from "@/components/ui/section-heading";
-import { Tag } from "@/components/ui/tag";
 import { profile } from "@/lib/data/profile";
 
 export function Skills() {
@@ -12,20 +11,34 @@ export function Skills() {
         subtitle="Technologies and tools I work with"
       />
 
-      <div className="grid gap-8 md:grid-cols-2">
-        {skillGroups.map(([group, skills]) => (
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-12">
+        {skillGroups.map(([group, skills], index) => (
           <div
             key={group}
-            className="rounded-2xl border border-stone-200 bg-white p-6"
+            className="py-6 first:pt-0"
           >
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-accent mb-4">
+            {/* Hairline divider — hidden on the first item in each responsive column */}
+            {index > 0 && (
+              <div className="mb-6 h-px bg-[#D8D6D0] lg:hidden" />
+            )}
+
+            <h3 className="text-xs font-semibold uppercase tracking-[0.15em] text-accent mb-3">
               {group}
             </h3>
-            <div className="flex flex-wrap gap-2">
-              {skills.map((skill) => (
-                <Tag key={skill} label={skill} />
+            <p className="text-[15px] text-stone-800 leading-relaxed">
+              {skills.map((skill, i) => (
+                <span key={skill}>
+                  <span className="transition-colors duration-200 hover:text-accent cursor-default">
+                    {skill}
+                  </span>
+                  {i < skills.length - 1 && (
+                    <span className="mx-[6px] text-stone-400 select-none" aria-hidden="true">
+                      ·
+                    </span>
+                  )}
+                </span>
               ))}
-            </div>
+            </p>
           </div>
         ))}
       </div>
