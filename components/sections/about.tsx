@@ -5,10 +5,14 @@ export function About() {
   return (
     <section id="about" className="mx-auto max-w-5xl px-6 py-20">
       <SectionHeading title="About" />
-      <div className="max-w-3xl">
-        <p className="text-lg text-stone-600 leading-relaxed">
-          {profile.aboutExtended}
-        </p>
+      <div className="max-w-3xl space-y-4">
+        {profile.aboutExtended.map((paragraph, index) => (
+          <p
+            key={index}
+            className="text-lg text-stone-600 leading-relaxed"
+            dangerouslySetInnerHTML={{ __html: paragraph }}
+          />
+        ))}
       </div>
     </section>
   );

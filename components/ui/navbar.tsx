@@ -17,14 +17,14 @@ export function Navbar() {
 
   return (
     <header className="z-50 bg-background pt-6">
-      <nav className="mx-auto flex max-w-5xl items-center justify-between px-6">
+      <nav className="mx-auto flex max-w-5xl items-center justify-center px-6">
         {/* Logo */}
-        <Link
+        {/* <Link
           href="/"
           className="font-heading text-lg font-bold text-stone-900 hover:text-accent"
         >
           Harsh Dev
-        </Link>
+        </Link> */}
 
         {/* Desktop links */}
         <ul className="hidden md:flex items-center gap-8">
@@ -37,11 +37,10 @@ export function Navbar() {
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className={`text-sm font-bold pb-1 border-b-2 transition-colors ${
-                    isActive
-                      ? "border-accent text-stone-900"
-                      : "border-transparent text-stone-600 hover:text-stone-900"
-                  }`}
+                  className={`text-sm font-bold pb-1 border-b-2 transition-colors ${isActive
+                    ? "border-accent text-stone-900"
+                    : "border-transparent text-stone-600 hover:text-stone-900"
+                    }`}
                 >
                   {link.label}
                 </Link>
@@ -74,11 +73,10 @@ export function Navbar() {
                   <Link
                     href={link.href}
                     onClick={() => setMobileOpen(false)}
-                    className={`inline-block text-sm font-bold pb-1 border-b-2 ${
-                      isActive
-                        ? "border-accent text-stone-900"
-                        : "border-transparent text-stone-600 hover:text-stone-900"
-                    }`}
+                    className={`inline-block text-sm font-bold pb-1 border-b-2 ${isActive
+                      ? "border-accent text-stone-900"
+                      : "border-transparent text-stone-600 hover:text-stone-900"
+                      }`}
                   >
                     {link.label}
                   </Link>
