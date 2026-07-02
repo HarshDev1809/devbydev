@@ -11,8 +11,13 @@ export const profile = {
   },
   pitch:
     "2 years in production across the full stack — shipped a maritime routing engine (~95% real-world accuracy), a zero-dependency Excel computation engine with topological dependency resolution, and automation pipelines that eliminated manual ops entirely.",
-  aboutExtended:
-    "Comfortable across PostgreSQL schemas and REST APIs through to React/Next.js interfaces. Owns the full lifecycle — system design, Docker deployments, CI/CD, and self-hosted bare-metal KVM infrastructure. Published two open-source npm packages used in production microservices.",
+  aboutExtended: [
+    "Full stack dev, <span class=\"text-accent font-semibold\">2 years</span> deep in production systems — shipped a <span class=\"text-accent font-semibold\">maritime routing engine</span> (<span class=\"text-accent font-semibold\">~95% real-world accuracy</span> against actual shipping routes), a <span class=\"text-accent font-semibold\">zero-dependency Excel engine</span> with <span class=\"text-accent font-semibold\">topological dependency resolution</span>, and <span class=\"text-accent font-semibold\">automation pipelines</span> that eliminated manual ops entirely.",
+    "I like owning the whole thing, not just my slice of it — <span class=\"text-accent font-semibold\">DB schema design</span>, migrating services across stacks, building async job pipelines with <span class=\"text-accent font-semibold\">BullMQ</span>, and working with spatial indexing (<span class=\"text-accent font-semibold\">PostGIS</span>, <span class=\"text-accent font-semibold\">H3</span>) to route ships across oceans efficiently. I've turned manual, multiple-times-a-week processes into fully automated daily ones more than once.",
+    "On the frontend I work in <span class=\"text-accent font-semibold\">React</span> and <span class=\"text-accent font-semibold\">Next.js</span>, backed by type-safe <span class=\"text-accent font-semibold\">PostgreSQL</span> schemas — with an eye on performance, like an <span class=\"text-accent font-semibold\">IndexedDB caching layer</span> that cut load times by <span class=\"text-accent font-semibold\">~50%</span> on a ~22,000-record geospatial dataset.",
+    "I also self-host my own projects end-to-end — <span class=\"text-accent font-semibold\">Docker</span>, <span class=\"text-accent font-semibold\">self-hosted</span> GitHub Actions runners, bare-metal <span class=\"text-accent font-semibold\">KVM infrastructure</span> — powering things like <span class=\"text-accent font-semibold\">Easy Budget</span> (a budgeting app with automated recurring transactions) and <span class=\"text-accent font-semibold\">Pastebin Lite</span> (SSR-rendered paste sharing). I've also published a couple of NPM packages, including <span class=\"text-accent font-semibold\">http-reply</span>, which is now used in a few production microservices.",
+    "Comfortable across the stack, from database to deployment."
+  ],
   skills: {
     "Backend & Systems": [
       "Node.js",

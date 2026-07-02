@@ -50,12 +50,12 @@ export function Hero() {
           {profile.title}
         </h1>
 
-        <a
+        {/* <a
           href={`mailto:${profile.email}`}
           className="inline-block bg-accent hover:bg-accent/90 text-white font-semibold py-4 px-10 text-lg transition-colors"
         >
           Contact
-        </a>
+        </a> */}
       </div>
     </section>
   );
