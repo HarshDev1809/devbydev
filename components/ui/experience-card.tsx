@@ -34,9 +34,8 @@ export function ExperienceCard({
             <li
               key={i}
               className="relative pl-5 text-stone-600 leading-relaxed text-sm md:text-base before:content-['—'] before:absolute before:left-0 before:text-stone-400"
-            >
-              {highlight}
-            </li>
+              dangerouslySetInnerHTML={{ __html: highlight }}
+            />
           )
         )}
       </ul>
