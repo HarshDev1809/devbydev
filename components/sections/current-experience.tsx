@@ -8,7 +8,7 @@ export function CurrentExperience() {
   const currentExperiences = experiences.filter((e) => e.current);
 
   return (
-    <section id="experience" className="mx-auto max-w-5xl px-6 py-20">
+    <section id="experience" className="mx-auto max-w-5xl px-6 py-20 min-h-screen flex flex-col justify-center">
       <SectionHeading
         title="Experience"
         subtitle="Where I'm currently working"

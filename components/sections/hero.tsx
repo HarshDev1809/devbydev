@@ -41,7 +41,7 @@ export function Hero() {
   return (
     <section
       id="hero"
-      className="relative mx-auto max-w-5xl px-6 py-24 md:py-32 flex flex-col justify-between min-h-[70vh]"
+      className="relative mx-auto max-w-5xl px-6 py-24 md:py-32 flex flex-col justify-center min-h-screen"
     >
       <div className="max-w-3xl">
         <h1 className="text-6xl md:text-8xl font-bold text-stone-900 leading-tight mb-8">
