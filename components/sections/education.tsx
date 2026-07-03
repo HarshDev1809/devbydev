@@ -5,7 +5,7 @@ export function Education() {
   const { education } = profile;
 
   return (
-    <section id="education" className="mx-auto max-w-5xl px-6 py-16 md:py-24">
+    <section id="education" className="mx-auto max-w-5xl px-6 py-16 md:py-24 min-h-screen flex flex-col justify-center">
       <SectionHeading title="Education" />
 
       <div className="mt-12 max-w-3xl">

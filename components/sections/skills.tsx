@@ -5,7 +5,7 @@ export function Skills() {
   const skillGroups = Object.entries(profile.skills);
 
   return (
-    <section id="skills" className="mx-auto max-w-5xl px-4 sm:px-6 py-16 md:py-24">
+    <section id="skills" className="mx-auto max-w-5xl px-4 sm:px-6 py-16 md:py-24 min-h-screen flex flex-col justify-center">
       <SectionHeading
         title="Skills"
         subtitle="Technologies and tools I work with"
