@@ -24,9 +24,9 @@ export function FeaturedProjects() {
       <div className="mt-16 flex justify-start md:justify-center">
         <Link
           href="/projects"
-          className="group inline-flex items-center gap-2 font-sans text-[15px] font-semibold tracking-wide uppercase text-stone-900 hover:text-accent transition-colors"
+          className="group inline-flex items-center gap-2 font-sans text-[14px] font-semibold tracking-[0.1em] uppercase text-[#F2F0EC] bg-accent px-8 py-3.5 hover:bg-accent/90 transition-colors"
         >
-          <span className="border-b-2 border-transparent group-hover:border-accent pb-1 transition-colors">
+          <span>
             View all projects
           </span>
           <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

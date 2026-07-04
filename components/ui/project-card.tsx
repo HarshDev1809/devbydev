@@ -26,9 +26,10 @@ export function ProjectCard({ project }: ProjectCardProps) {
         </div>
       )}
 
-      <p className="font-sans text-stone-700 mb-8 leading-[1.8] text-pretty max-w-3xl text-[17px]">
-        {project.summary}
-      </p>
+      <p 
+        className="font-sans text-stone-700 mb-8 leading-[1.8] text-pretty max-w-3xl text-[17px]"
+        dangerouslySetInnerHTML={{ __html: project.summary }}
+      />
 
       {/* Tech Stack - Text based list instead of pill tags */}
       <div className="font-sans text-[15px] text-stone-500 mb-8 leading-[1.8]">
@@ -44,12 +45,12 @@ export function ProjectCard({ project }: ProjectCardProps) {
         ))}
       </div>
 
-      <div className="mt-auto flex flex-wrap items-center gap-6 md:gap-8">
+      <div className="mt-auto flex flex-wrap items-center gap-4">
         <Link
           href={`/projects/${project.slug}`}
-          className="group/link inline-flex items-center gap-2 font-sans text-[15px] font-medium text-stone-900 hover:text-accent transition-colors"
+          className="group/link inline-flex items-center gap-2 font-sans text-[14px] uppercase tracking-wide font-semibold text-stone-900 border border-[#D8D6D0] px-5 py-2.5 hover:border-accent hover:text-accent transition-colors"
         >
-          <span className="border-b border-transparent group-hover/link:border-accent pb-0.5 transition-colors">
+          <span>
             View details
           </span>
           <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
@@ -61,9 +62,9 @@ export function ProjectCard({ project }: ProjectCardProps) {
             href={link.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="group/external inline-flex items-center gap-1.5 font-sans text-[15px] text-stone-500 hover:text-accent transition-colors"
+            className="group/external inline-flex items-center gap-1.5 font-sans text-[14px] uppercase tracking-wide font-semibold text-stone-600 border border-[#D8D6D0] px-4 py-2.5 hover:border-accent hover:text-accent transition-colors"
           >
-            <span className="border-b border-transparent group-hover/external:border-accent pb-0.5 transition-colors">
+            <span>
               {link.label}
             </span>
             <ExternalLink className="w-3.5 h-3.5" />

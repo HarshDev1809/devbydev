@@ -21,10 +21,10 @@ export const projects: Project[] = [
     slug: "viexports-routing-service",
     title: "Maritime Routing Engine",
     summary:
-      "Dijkstra/A*-based routing engine for global maritime networks, ~95% accuracy against real shipping routes.",
+      "<span class=\"text-accent font-medium\">Dijkstra/A*</span>-based routing engine for global maritime networks, <span class=\"text-accent font-medium\">~95% accuracy</span> against real shipping routes.",
     context: "Viexports",
     timeframe: "Sept 2024 – Present",
-    stack: ["Node.js", "PostGIS", "H3", "Dijkstra", "A*"],
+    stack: ["Node.js", "PostgreSQL", "PostGIS", "H3", "Dijkstra", "A*"],
     highlights: [
       "Engineered a maritime routing engine using Dijkstra and A* algorithms over a global maritime network graph to compute optimal sea routes between any two ports worldwide.",
       "Architected the spatial database layer using PostGIS and H3 hexagonal indexing to store, cluster, and query global maritime networks and sea nodes efficiently.",
@@ -41,10 +41,10 @@ export const projects: Project[] = [
     slug: "viexports-excel-engine",
     title: "Zero-Dependency Excel Engine",
     summary:
-      "Custom-built spreadsheet computation engine with regex tokenizer and topological dependency resolution.",
+      "Custom-built <span class=\"text-accent font-medium\">spreadsheet computation engine</span> with regex tokenizer and <span class=\"text-accent font-medium\">topological dependency resolution</span>.",
     context: "Viexports",
     timeframe: "Sept 2024 – Present",
-    stack: ["TypeScript", "Node.js"],
+    stack: ["Node.js"],
     highlights: [
       "Built a zero-dependency custom Excel-like computation engine to eliminate reliance on legacy spreadsheet workflows.",
       "Implemented a regex-based tokenizer and a dependency graph with topological sort for stale-free recalculation of dependent cells.",
@@ -61,7 +61,7 @@ export const projects: Project[] = [
     slug: "viexports-admin-panel",
     title: "Admin Panel & Automation Pipelines",
     summary:
-      "Scalable admin module for freight, market rates, insurance, and P&L enquiry workflows with automated data sync.",
+      "<span class=\"text-accent font-medium\">Scalable admin module</span> for freight, market rates, insurance, and P&L enquiry workflows with <span class=\"text-accent font-medium\">automated data sync</span>.",
     context: "Viexports",
     timeframe: "Sept 2024 – Present",
     stack: [
@@ -86,9 +86,9 @@ export const projects: Project[] = [
     slug: "easy-budget",
     title: "Easy Budget",
     summary:
-      "Full-stack budget and expense tracking app with recurring transactions and real-time alerts.",
+      "Full-stack <span class=\"text-accent font-medium\">budget and expense tracking</span> app with recurring transactions and <span class=\"text-accent font-medium\">real-time alerts</span>.",
     context: "Personal Project",
-    timeframe: "2024",
+    timeframe: "2026 – Present",
     stack: [
       "Next.js",
       "Node.js",
@@ -109,7 +109,6 @@ export const projects: Project[] = [
     ],
     links: [
       { label: "Live", url: "https://easy-budget.devbydev.in" },
-      { label: "Code", url: "https://github.com/HarshDev1809/easy_budget_fe" },
     ],
     featured: true,
   },
