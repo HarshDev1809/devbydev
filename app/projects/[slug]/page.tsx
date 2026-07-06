@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, ExternalLink, TrendingUp } from "lucide-react";
-import { Tag } from "@/components/ui/tag";
+import { ArrowLeft, ExternalLink } from "lucide-react";
 import { ProjectJsonLd, BreadcrumbJsonLd } from "@/components/seo/json-ld";
 import { siteConfig } from "@/lib/seo-config";
 import { projects } from "@/lib/data/projects";
@@ -61,7 +60,7 @@ export default async function ProjectDetailPage({
   const pageUrl = `${siteConfig.url}/projects/${project.slug}`;
 
   return (
-    <div className="mx-auto max-w-4xl px-6 py-16">
+    <div className="mx-auto max-w-5xl px-6 py-24 md:py-32">
       {/* Structured Data */}
       <ProjectJsonLd
         title={project.title}
@@ -87,53 +86,64 @@ export default async function ProjectDetailPage({
       </Link>
 
       {/* Header */}
-      <div className="mb-10">
-        <div className="flex flex-wrap items-center gap-3 mb-4">
+      <div className="mb-16 md:mb-20">
+        <div className="flex flex-wrap items-center gap-x-2 mb-6">
           {project.context && (
-            <span className="rounded-lg bg-accent/10 px-3 py-1 text-xs font-semibold text-accent">
+            <span className="font-sans text-xs font-semibold uppercase tracking-[0.15em] text-accent">
               {project.context}
             </span>
           )}
+          {project.context && project.timeframe && (
+            <span className="text-stone-300">&middot;</span>
+          )}
           {project.timeframe && (
-            <span className="text-sm text-stone-500">{project.timeframe}</span>
+            <span className="font-sans text-[15px] text-stone-500 shrink-0">
+              {project.timeframe}
+            </span>
           )}
         </div>
 
-        <h1 className="font-heading text-4xl md:text-5xl font-bold text-stone-900 mb-4">
+        <h1 className="font-heading text-5xl md:text-7xl font-bold text-stone-900 mb-8 leading-[1.1]">
           {project.title}
         </h1>
 
-        <p className="text-lg text-stone-600 leading-relaxed max-w-3xl">
-          {project.summary}
-        </p>
+        <p 
+          className="font-sans text-stone-700 text-lg md:text-[21px] leading-[1.8] max-w-3xl text-pretty"
+          dangerouslySetInnerHTML={{ __html: project.summary }}
+        />
       </div>
 
       {/* Tech stack */}
-      <div className="mb-10">
-        <h2 className="text-sm font-semibold uppercase tracking-wider text-stone-400 mb-3">
+      <div className="mb-16 border-t border-[#D8D6D0] pt-8">
+        <h2 className="font-sans text-xs font-semibold uppercase tracking-[0.15em] text-stone-400 mb-4">
           Tech Stack
         </h2>
-        <div className="flex flex-wrap gap-2">
-          {project.stack.map((tech) => (
-            <Tag key={tech} label={tech} variant="accent" />
+        <div className="font-sans text-[15px] text-stone-500 leading-[1.8]">
+          {project.stack.map((tech, i) => (
+            <span key={tech}>
+              <span className="hover:text-accent transition-colors">{tech}</span>
+              {i < project.stack.length - 1 && (
+                <span className="mx-[6px] text-stone-300" aria-hidden="true">
+                  &middot;
+                </span>
+              )}
+            </span>
           ))}
         </div>
       </div>
 
       {/* Metrics */}
       {project.metrics && project.metrics.length > 0 && (
-        <div className="mb-10 rounded-2xl border border-accent/20 bg-accent/5 p-6">
-          <h2 className="flex items-center gap-2 text-sm font-semibold uppercase tracking-wider text-accent mb-4">
-            <TrendingUp className="w-4 h-4" />
-            Key Metrics
+        <div className="mb-16 border-t border-[#D8D6D0] pt-12">
+          <h2 className="font-sans text-xs font-semibold uppercase tracking-[0.15em] text-stone-400 mb-8">
+            Key Impact
           </h2>
-          <div className="grid gap-3 md:grid-cols-2">
+          <div className="flex flex-col gap-8">
             {project.metrics.map((metric) => (
-              <div
-                key={metric}
-                className="rounded-xl bg-white border border-accent/10 px-4 py-3"
-              >
-                <p className="font-semibold text-stone-900">{metric}</p>
+              <div key={metric} className="pl-6 border-l-2 border-accent/40">
+                <p className="font-heading text-2xl md:text-3xl font-bold text-stone-800 leading-[1.3] max-w-2xl text-balance">
+                  {metric}
+                </p>
               </div>
             ))}
           </div>
@@ -141,18 +151,17 @@ export default async function ProjectDetailPage({
       )}
 
       {/* Highlights */}
-      <div className="mb-10">
-        <h2 className="text-sm font-semibold uppercase tracking-wider text-stone-400 mb-4">
+      <div className="mb-16 border-t border-[#D8D6D0] pt-8">
+        <h2 className="font-sans text-xs font-semibold uppercase tracking-[0.15em] text-stone-400 mb-6">
           What Was Built
         </h2>
-        <ul className="space-y-3">
+        <ul className="space-y-6 max-w-3xl">
           {project.highlights.map((highlight, i) => (
             <li
               key={i}
-              className="flex items-start gap-3 text-stone-600 leading-relaxed"
+              className="relative pl-6 font-sans text-[17px] text-stone-700 leading-[1.8] before:content-['—'] before:absolute before:left-0 before:text-stone-400"
             >
-              <span className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
-              {highlight}
+              <span dangerouslySetInnerHTML={{ __html: highlight }} />
             </li>
           ))}
         </ul>
@@ -160,17 +169,17 @@ export default async function ProjectDetailPage({
 
       {/* External links */}
       {project.links && project.links.length > 0 && (
-        <div className="flex flex-wrap gap-3">
+        <div className="flex flex-wrap gap-4 pt-8 border-t border-[#D8D6D0]">
           {project.links.map((link) => (
             <a
               key={link.label}
               href={link.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-lg border border-stone-200 bg-white px-5 py-2.5 text-sm font-semibold text-stone-700 hover:border-accent/30 hover:text-accent"
+              className="group/external inline-flex items-center gap-2 font-sans text-[14px] uppercase tracking-wide font-semibold text-stone-900 border border-[#D8D6D0] px-6 py-3 hover:border-accent hover:text-accent transition-colors"
             >
-              {link.label}
-              <ExternalLink className="w-3.5 h-3.5" />
+              <span>{link.label}</span>
+              <ExternalLink className="w-4 h-4 group-hover/external:-translate-y-0.5 group-hover/external:translate-x-0.5 transition-transform" />
             </a>
           ))}
         </div>

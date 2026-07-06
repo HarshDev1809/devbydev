@@ -29,7 +29,7 @@ export function ExperienceCard({
 
       {/* Highlights */}
       <ul className="space-y-4 mb-8">
-        {(compact ? experience.highlights.slice(0, 2) : experience.highlights).map(
+        {(compact ? experience.highlights.slice(0, 3) : experience.highlights).map(
           (highlight, i) => (
             <li
               key={i}

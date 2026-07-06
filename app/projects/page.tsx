@@ -40,7 +40,7 @@ export default function ProjectsPage() {
         subtitle="Everything I've built and shipped"
       />
 
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <div className="flex flex-col">
         {projects.map((project) => (
           <ProjectCard key={project.slug} project={project} />
         ))}

@@ -10,13 +10,13 @@ export const profile = {
     npm: "https://www.npmjs.com/~dev182000",
   },
   pitch:
-    "2 years in production across the full stack — shipped a maritime routing engine (~95% real-world accuracy), a zero-dependency Excel computation engine with topological dependency resolution, and automation pipelines that eliminated manual ops entirely.",
+    "Full Stack Developer with 2+ years of experience engineering production-grade systems. Proven track record of shipping complex solutions—including a maritime routing engine with ~95% real-world accuracy and a zero-dependency Excel computation engine. Adept at transforming manual workflows into fully automated, scalable pipelines.",
   aboutExtended: [
-    "Full stack dev, <span class=\"text-accent font-semibold\">2 years</span> deep in production systems — shipped a <span class=\"text-accent font-semibold\">maritime routing engine</span> (<span class=\"text-accent font-semibold\">~95% real-world accuracy</span> against actual shipping routes), a <span class=\"text-accent font-semibold\">zero-dependency Excel engine</span> with <span class=\"text-accent font-semibold\">topological dependency resolution</span>, and <span class=\"text-accent font-semibold\">automation pipelines</span> that eliminated manual ops entirely.",
-    "I like owning the whole thing, not just my slice of it — <span class=\"text-accent font-semibold\">DB schema design</span>, migrating services across stacks, building async job pipelines with <span class=\"text-accent font-semibold\">BullMQ</span>, and working with spatial indexing (<span class=\"text-accent font-semibold\">PostGIS</span>, <span class=\"text-accent font-semibold\">H3</span>) to route ships across oceans efficiently. I've turned manual, multiple-times-a-week processes into fully automated daily ones more than once.",
-    "On the frontend I work in <span class=\"text-accent font-semibold\">React</span> and <span class=\"text-accent font-semibold\">Next.js</span>, backed by type-safe <span class=\"text-accent font-semibold\">PostgreSQL</span> schemas — with an eye on performance, like an <span class=\"text-accent font-semibold\">IndexedDB caching layer</span> that cut load times by <span class=\"text-accent font-semibold\">~50%</span> on a ~22,000-record geospatial dataset.",
-    "I also self-host my own projects end-to-end — <span class=\"text-accent font-semibold\">Docker</span>, <span class=\"text-accent font-semibold\">self-hosted</span> GitHub Actions runners, bare-metal <span class=\"text-accent font-semibold\">KVM infrastructure</span> — powering things like <span class=\"text-accent font-semibold\">Easy Budget</span> (a budgeting app with automated recurring transactions) and <span class=\"text-accent font-semibold\">Pastebin Lite</span> (SSR-rendered paste sharing). I've also published a couple of NPM packages, including <span class=\"text-accent font-semibold\">http-reply</span>, which is now used in a few production microservices.",
-    "Comfortable across the stack, from database to deployment."
+    "I am a Full Stack Developer with over <span class=\"text-accent font-semibold\">2 years of hands-on experience</span> engineering production systems. I specialize in building complex, data-intensive applications, having recently delivered a <span class=\"text-accent font-semibold\">maritime routing engine</span> that achieves <span class=\"text-accent font-semibold\">~95% accuracy</span> against real-world shipping routes, and a <span class=\"text-accent font-semibold\">zero-dependency Excel engine</span> featuring topological dependency resolution.",
+    "I thrive on <span class=\"text-accent font-semibold\">end-to-end ownership</span>. From architecting scalable database schemas in <span class=\"text-accent font-semibold\">PostgreSQL</span> and migrating legacy services, to designing asynchronous job pipelines with <span class=\"text-accent font-semibold\">BullMQ</span>, I take systems from concept to deployment. My work with spatial indexing (<span class=\"text-accent font-semibold\">PostGIS</span>, <span class=\"text-accent font-semibold\">H3</span>) to route ships efficiently demonstrates my ability to tackle niche, high-complexity domains.",
+    "On the frontend, I craft highly responsive and SEO-optimized interfaces using <span class=\"text-accent font-semibold\">React.js</span> and <span class=\"text-accent font-semibold\">Next.js</span>. I am deeply focused on performance; for instance, I recently architected an <span class=\"text-accent font-semibold\">IndexedDB caching layer</span> that reduced client load times by <span class=\"text-accent font-semibold\">~50%</span> for a ~22,000-record geospatial dataset.",
+    "My infrastructure expertise spans <span class=\"text-accent font-semibold\">Docker</span>, <span class=\"text-accent font-semibold\">CI/CD pipelines via GitHub Actions</span>, and managing bare-metal <span class=\"text-accent font-semibold\">KVM servers</span>. I actively maintain self-hosted applications like <span class=\"text-accent font-semibold\">Easy Budget</span> and <span class=\"text-accent font-semibold\">Pastebin Lite</span>, and contribute to the developer ecosystem with open-source NPM packages like <span class=\"text-accent font-semibold\">http-reply</span>.",
+    "Whether it's optimizing a database query, designing a REST API, or configuring a reverse proxy, I am comfortable across the entire stack—delivering reliable, scalable, and business-driven solutions."
   ],
   skills: {
     "Backend & Systems": [
@@ -36,7 +36,7 @@ export const profile = {
       "REST APIs",
       "Microservices",
     ],
-    "Currently Exploring": ["Vue.js", "Nuxt.js", "Golang"],
+    "Currently Exploring": ["Vue.js", "Nuxt.js", "Golang", "Bun.js"],
     "Agentic AI": ["Claude Code", "Codex", "Cursor", "Gemini", "Google Jules"],
   },
   education: [
@@ -45,7 +45,7 @@ export const profile = {
       location: "Rajouri Garden, New Delhi",
       degree: "B.Tech, Computer Science",
       period: "2018 – 2022",
-      grade: "CGPA 8.5",
+      grade: "8.5 CGPA",
     },
     {
       institution: "Seth Anandram Jaipuria School",
